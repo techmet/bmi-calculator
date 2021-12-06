@@ -1,15 +1,10 @@
 export interface IPerson {
-    Gender: Gender;
+    Gender: string;
     HeightCm: number;
     WeightKg: number;
-    BMI: number;
-    BMICategory: BMICategory;
-    HealthRisk: HealthRisk;
-}
-
-export enum Gender {
-    Male = "Male",
-    Female = "Female"
+    BMI?: number;
+    BMICategory?: BMICategory;
+    HealthRisk?: HealthRisk;
 }
 
 export enum BMICategory {

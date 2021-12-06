@@ -13,3 +13,5 @@ app.post('/bmi/calculate', bmiController.calculateBMI);
 app.listen(port, () => {
     return console.log(`server is listening on ${port}`);
 });
+
+export default app;
