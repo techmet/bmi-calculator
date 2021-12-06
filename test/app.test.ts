@@ -3,7 +3,7 @@ import app from "../src/app";
 
 
 describe("POST /bmi/calculate", () => {
-    it("should return false from assert when no message is found", (done) => {
+    it("should return persons details with BMI data", (done) => {
         const payload = [
             {
                 "Gender": "Male",
@@ -38,61 +38,62 @@ describe("POST /bmi/calculate", () => {
         ];
 
         const response = {
-            "overWeightCount": 2,
+            "overWeightCount": 4,
             "persons": [
                 {
                     "Gender": "Male",
                     "HeightCm": 171,
                     "WeightKg": 96,
                     "BMI": 32.83061454806607,
-                    "BMICategory": "Normal weight",
-                    "HealthRisk": "Low risk"
+                    "BMICategory": "Moderately obese",
+                    "HealthRisk": "Medium risk"
                 },
                 {
                     "Gender": "Male",
                     "HeightCm": 161,
                     "WeightKg": 85,
                     "BMI": 32.79194475521777,
-                    "BMICategory": "Normal weight",
-                    "HealthRisk": "Low risk"
+                    "BMICategory": "Moderately obese",
+                    "HealthRisk": "Medium risk"
                 },
                 {
                     "Gender": "Male",
                     "HeightCm": 180,
                     "WeightKg": 77,
                     "BMI": 23.76543209876543,
-                    "BMICategory": "Very severely obese",
-                    "HealthRisk": "Very high risk"
+                    "BMICategory": "Normal weight",
+                    "HealthRisk": "Low risk"
                 },
                 {
                     "Gender": "Female",
                     "HeightCm": 166,
                     "WeightKg": 62,
                     "BMI": 22.49963710262738,
-                    "BMICategory": "Very severely obese",
-                    "HealthRisk": "Very high risk"
+                    "BMICategory": "Normal weight",
+                    "HealthRisk": "Low risk"
                 },
                 {
                     "Gender": "Female",
                     "HeightCm": 150,
                     "WeightKg": 70,
                     "BMI": 31.11111111111111,
-                    "BMICategory": "Normal weight",
-                    "HealthRisk": "Low risk"
+                    "BMICategory": "Moderately obese",
+                    "HealthRisk": "Medium risk"
                 },
                 {
                     "Gender": "Female",
                     "HeightCm": 167,
                     "WeightKg": 82,
                     "BMI": 29.402273297715947,
-                    "BMICategory": "Normal weight",
-                    "HealthRisk": "Low risk"
+                    "BMICategory": "Overweight",
+                    "HealthRisk": "Enhanced risk"
                 }
             ]
         };
         request(app).post("/bmi/calculate")
-            .send({ payload })
+            .send(payload)
             .end((_, res) => {
+                console.log(res.body);
                 expect(res.body).toEqual(response);
                 expect(res.error).toBeFalsy();
                 done();

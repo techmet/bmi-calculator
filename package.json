@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
-    "test": "jest",
-    "test-dev": "jest --forceExit --coverage --verbose"
+    "start": "npm run clean && tsc && node dist/src/index.js",
+    "test": "npm run clean && tsc && jest",
+    "clean": "rm -rf dist",
+    "test-dev": "npm run clean && tsc && jest --forceExit --coverage --verbose"
   },
   "repository": {
     "type": "git",
