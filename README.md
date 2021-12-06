@@ -27,6 +27,6 @@ output:
  }]
 ```
 Steps to run:
-1. `npm install`
-2. `npm start` to run the API.
-3. `npm test` to run tests. 
+1. Run `npm install`
+2. Run `npm start` to run the API.
+3. Run `npm test` to run tests. 
