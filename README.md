@@ -17,14 +17,19 @@ input:
 ```
 output:
 ```
-[{
-      "Gender": "Male",
-      "HeightCm": 171,
-      "WeightKg": 96,
-      "BMI": 32.83061454806607,
-      "BMICategory": "Normal weight",
-      "HealthRisk": "Low risk"
- }]
+{
+    "overWeightCount": 0,
+    "persons": [
+        {
+            "Gender": "Male",
+            "HeightCm": 171,
+            "WeightKg": 96,
+            "BMI": 32.83061454806607,
+            "BMICategory": "Moderately obese",
+            "HealthRisk": "Medium risk"
+        }
+    ] 
+}
 ```
 Steps to run:
 1. Run `npm install`
